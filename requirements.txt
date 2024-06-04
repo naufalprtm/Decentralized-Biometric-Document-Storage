@@ -1,4 +1,4 @@
 flask
 flask-cors
 tinybio
-Gunicorn==20.1.0
+gunicorn
