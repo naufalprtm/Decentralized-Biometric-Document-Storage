@@ -1,20 +1,6 @@
 {
   "cleanUrls": true,
   "version": 2,
-  "routes": [
-    {
-      "src": "/update-biometric-token",
-      "dest": "api/update-biometric-token"
-    },
-    {
-      "src": "/validate-biometric-token",
-      "dest": "api/validate-biometric-token"
-    },
-    {
-      "src": "/authenticate-biometric",
-      "dest": "api/authenticate-biometric"
-    }
-  ],
   "builds": [
     {
       "src": "app.py",
