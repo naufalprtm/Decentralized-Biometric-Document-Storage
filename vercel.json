@@ -4,12 +4,10 @@
   "functions": {
     "preBuild": {
       "cmd": "pip install -r requirements.txt"
-    }
-  },
-  "builds": [
-    {
+    },
+    "api": {
       "src": "app.py",
-      "use": "@vercel/python"
+      "runtime": "@vercel/python"
     }
-  ]
+  }
 }
