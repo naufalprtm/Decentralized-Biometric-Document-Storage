@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "id": "ec570e2d-99b6-4a39-92db-0f826d05f7a5",
+    "name": "My Keplr Wallet",
+    "address": "cosmos1h7fv3ncfu5l5u2qz5u0ay47ldv2dxhglx3f3jw",
+    "crypto": {
+      "ciphertext": "2a65c8e8de7f15d0143a3b8cbe0dc9a5b1e9ab8e05c2f1e8d84e40b1d7f3b0c5",
+      "cipherparams": {
+        "iv": "a3e3d2c0a2b4d0b2c4a8d9e2c6f5e1b2"
+      },
+      "cipher": "aes-128-ctr",
+      "kdf": "pbkdf2",
+      "kdfparams": {
+        "dklen": 32,
+        "salt": "ab0c3d6e2a5f4c1e0b2d9e4a7c8d0f2a",
+        "c": 262144,
+        "prf": "hmac-sha256"
+      },
+      "mac": "fc4c9d82dabc3a5f2b14f8e6f1c8d6e9a0b3c1d2e5f6a4b8d2e0c4a6b1d9e2f3"
+    }
+  }
+  

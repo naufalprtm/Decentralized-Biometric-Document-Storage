@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+.container {
+    overflow: hidden;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fdfdfd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #000000;
+}
+h2 {
+    text-align: center;
+    color: #000000;
+}
+
+h3 {
+    color: #000000;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group button {
+    width: 100%;
+    height: auto;
+    max-width: auto;
+    padding: 10px;
+    margin: 3px;
+    background-color: #28a745;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #218838;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea {
+    background-color: #ffffff; /* Latar belakang putih */
+    color: #000000; /* Teks hitam */
+}
+
+.documents-list {
+    margin-top: 20px;
+}
+
+.document-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.document-item button {
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.document-item button:hover {
+    background-color: #c82333;
+}
+
+.hex-visualization,
+.upload-visualization,
+.view-visualization,
+.decrypted-visualization {
+    text-align: center;
+    margin-bottom: 20px;
+    height: 200px;
+}
+
+
+.hex-visualization svg,
+.view-visualization svg,
+.upload-visualization svg,
+.decrypted-visualization svg {
+    display: inline-block;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+}
+
+
+.node-shares-visualization {
+    margin-top: 20px;
+}
+
+.node-share-container {
+    display: flex;
+    flex-direction: row; /* Susunan ke horizontal */
+    align-items: center;
+    justify-content: center; /* Menengahkan horizontal */
+    flex-wrap: wrap; /* Wrap jika ukuran container tidak cukup */
+}
+
+.node-share {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px; /* Jarak antar node-share */
+    background-color: #000000;
+}
+
+.svg-container {
+    margin-top: 20px; /* Jarak antara node-share dan SVG */
+}

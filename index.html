@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decentralized Biometric Document Storage</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Decentralized Biometric Document Storage</h1>
+        
+        <!-- Biometric Authentication Form -->
+        <div class="form-group">
+            <label for="biometric-auth">Biometric Authentication</label>
+            <input type="text" id="biometric-auth" placeholder="Place your finger on the scanner" readonly>
+            <button onclick="generateBiometricHex()">Generate Random 512-bit Hex</button>
+        </div>
+
+        <!-- Visualization for Biometric Authentication -->
+        <div id="hex-visualization" class="hex-visualization"></div>
+
+        <!-- Document Upload Form -->
+        <div class="form-group">
+            <label for="document-upload">Upload Document</label>
+            <input type="file" id="document-upload">
+            <button onclick="uploadDocument()">Upload</button>
+        </div>
+
+        <!-- Visualization for Document Upload -->
+        <div id="upload-visualization" class="upload-visualization"></div>
+
+        <!-- Document List -->
+        <div class="documents-list" id="documents-list">
+            <h2>Your Documents</h2>
+            <!-- Documents will be dynamically added here -->
+        </div>
+        <!-- Visualization for Document View -->
+        <div id="view-visualization" class="view-visualization"></div>
+
+        <!-- Visualization for Document Encryption -->
+        <div id="encryption-visualization" class="encryption-visualization"></div>
+
+        <!-- Public Share Hash Result -->
+        <div class="form-group">
+            <label for="public-share-hash">Public Share Hash Result</label>
+            <textarea id="public-share-hash" rows="5" readonly></textarea>
+        </div>
+
+        <!-- Document Decryption Form -->
+        <div class="form-group">
+            <label for="decrypt-key">Enter Decrypt Key</label>
+            <input type="text" id="decrypt-key" placeholder="Enter the 512-bit hex key">
+            <button onclick="decryptDocument()">Decrypt Document</button>
+        </div>
+        
+        <!-- Decrypted Document Content -->
+        <div class="form-group">
+            <label for="decrypted-content">Decrypted Document Content</label>
+            <textarea id="decrypted-content" rows="10" readonly></textarea>
+        </div>
+
+        <!-- Visualization for Document Decryption -->
+        <div id="decryption-visualization" class="decryption-visualization"></div>
+    </div>
+    
+    <script src="./authenticateBiometric.js"></script>
+    <script src="./deleteDocument.js"></script>
+    <script src="./ecrypt-decrypt.js"></script>
+    <script src="./file.js"></script>
+    <script src="./generateBiometric.js"></script>
+    <script src="./Visualization.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+</body>
+</html>
