@@ -1,13 +1,4 @@
 {
   "cleanUrls": true,
-  "version": 2,
-  "builds": [
-    {
-      "src": "app.py",
-      "use": "@vercel/python",
-      "config": {
-        "buildCommand": "pip install -r requirements.txt && $NPM_EXECUTOR install"
-      }
-    }
-  ]
+  "version": 2
 }

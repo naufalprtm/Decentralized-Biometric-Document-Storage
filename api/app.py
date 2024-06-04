@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from tinybio_integration import TinyBioIntegration
+from http.server import BaseHTTPRequestHandler
+from os.path import dirname, abspath, join
+dir = dirname(abspath(__file__))
 
 app = Flask(__name__)
 CORS(app)
