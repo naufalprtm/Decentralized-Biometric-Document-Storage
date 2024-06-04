@@ -17,6 +17,8 @@ TOLERANCE = 0.1
 nodes = [tinybio.node() for _ in range(NODE_COUNT)]
 tinybio.preprocess(nodes, length=4)
 
+token_expiry_time = None
+
 def create_descriptor(hex_key: str) -> tinybio.Descriptor:
     """Create a descriptor from a hex key"""
     return tinybio.hexToDescriptor(hex_key)
@@ -66,14 +68,13 @@ def generate_node_token(node_id: int, descriptor: tinybio.Descriptor) -> Tuple[t
 @app.route('/update-biometric-token', methods=['POST'])
 def update_biometric_token():
     try:
-        hex_key = request.json['hex_key']
+        global token_expiry_time
         
-        # Generate new token based on the hex_key
+        hex_key = request.json['hex_key']
         descriptor = create_descriptor(hex_key)
         auth_masks, auth_token = generate_node_token(0, descriptor)  # Generate token for first node
         
         # Update token_expiry_time here
-        global token_expiry_time
         token_expiry_time = datetime.now() + timedelta(seconds=TOKEN_EXPIRY_DURATION)
         
         return jsonify({'success': True})
