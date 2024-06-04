@@ -1,14 +1,12 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import time
-from datetime import datetime, timedelta
 from tinybio_integration import TinyBioIntegration
 
 app = Flask(__name__)
 CORS(app)
 
 # Constants
-TOKEN_EXPIRY_DURATION = 360  # 1 menit dalam detik
+TOKEN_EXPIRY_DURATION = 300  # 5 menit dalam detik
 NODE_COUNT = 3
 
 # Initialize TinyBio integration
