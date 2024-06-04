@@ -1,13 +1,13 @@
 {
   "cleanUrls": true,
   "version": 2,
-  "functions": {
-    "preBuild": {
-      "cmd": "pip install -r requirements.txt"
-    },
-    "api": {
+  "builds": [
+    {
       "src": "app.py",
-      "runtime": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "buildCommand": "pip install -r requirements.txt && $NPM_EXECUTOR install"
+      }
     }
-  }
+  ]
 }
