@@ -11,13 +11,11 @@ CORS(app)
 # Constants
 TOKEN_EXPIRY_DURATION = 360  # 1 menit dalam detik
 NODE_COUNT = 3
-TOLERANCE = 0.1
+TOLERANCE = 5
 
 # Initialize nodes for biometric authentication
 nodes = [tinybio.node() for _ in range(NODE_COUNT)]
 tinybio.preprocess(nodes, length=4)
-
-token_expiry_time = None
 
 def create_descriptor(hex_key: str) -> tinybio.Descriptor:
     """Create a descriptor from a hex key"""
@@ -64,17 +62,21 @@ def generate_node_token(node_id: int, descriptor: tinybio.Descriptor) -> Tuple[t
     auth_token, _ = create_auth_token(auth_masks, modified_descriptor)
     return auth_masks[0], auth_token
 
+def hex_key_is_valid(hex_key):
+    return len(hex_key) == 64
+
 # Function to update biometric token and token expiry time
 @app.route('/update-biometric-token', methods=['POST'])
 def update_biometric_token():
     try:
-        global token_expiry_time
-        
         hex_key = request.json['hex_key']
+        
+        # Generate new token based on the hex_key
         descriptor = create_descriptor(hex_key)
         auth_masks, auth_token = generate_node_token(0, descriptor)  # Generate token for first node
         
         # Update token_expiry_time here
+        global token_expiry_time
         token_expiry_time = datetime.now() + timedelta(seconds=TOKEN_EXPIRY_DURATION)
         
         return jsonify({'success': True})
