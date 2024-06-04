@@ -1,5 +1,3 @@
-# app.py
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import time
@@ -72,6 +70,3 @@ def authenticate_biometric():
 @app.errorhandler(405)
 def method_not_allowed(e):
     return jsonify({'error': 'Method not allowed'}), 405
-
-if __name__ == "__main__":
-    app.run(debug=True)
